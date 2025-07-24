@@ -1,5 +1,6 @@
 import {
   HeaderComponent,
+  HomePage,
   MovieCardPage,
   SearchResultsPage,
 } from '../pages/index';
@@ -12,15 +13,17 @@ test.describe(
   },
   () => {
     let pageHeader: HeaderComponent;
+    let homePage: HomePage;
     let searchResultsPage: SearchResultsPage;
     let moviePage: MovieCardPage;
 
     test.beforeEach(async ({ page }) => {
       pageHeader = new HeaderComponent(page);
+      homePage = new HomePage(page);
       searchResultsPage = new SearchResultsPage(page);
       moviePage = new MovieCardPage(page);
 
-      await pageHeader.openHomePage();
+      await homePage.openHomePage();
     });
 
     test('Verify search result leads to the correct movie page', async () => {

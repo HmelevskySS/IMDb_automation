@@ -1,10 +1,11 @@
-import { BasePage } from '../BasePage.page';
 import { Locator, Page } from '@playwright/test';
 
 /**
  * Page object for the header component containing the search bar.
  */
-export class HeaderComponent extends BasePage {
+export class HeaderComponent {
+  readonly page: Page;
+
   readonly searchBar: Locator;
   readonly searchButton: Locator;
   readonly menuButton: Locator;
@@ -12,7 +13,7 @@ export class HeaderComponent extends BasePage {
   readonly topMoviesLink: Locator;
 
   constructor(page: Page) {
-    super(page);
+    this.page = page;
 
     // Search bar locators
     this.searchBar = page.getByTestId('suggestion-search');

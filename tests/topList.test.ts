@@ -1,4 +1,9 @@
-import { HeaderComponent, MovieCardPage, TopMoviesPage } from '../pages/index';
+import {
+  HeaderComponent,
+  HomePage,
+  MovieCardPage,
+  TopMoviesPage,
+} from '../pages/index';
 import { expect, test } from '@playwright/test';
 
 test.describe(
@@ -8,15 +13,17 @@ test.describe(
   },
   () => {
     let pageHeader: HeaderComponent;
+    let homePage: HomePage;
     let topMoviesPage: TopMoviesPage;
     let moviePage: MovieCardPage;
 
     test.beforeEach(async ({ page }) => {
       pageHeader = new HeaderComponent(page);
+      homePage = new HomePage(page);
       topMoviesPage = new TopMoviesPage(page);
       moviePage = new MovieCardPage(page);
 
-      await pageHeader.openHomePage();
+      await homePage.openHomePage();
     });
 
     test('Verify movie from the Top 250 list contains all the required parameters', async () => {
