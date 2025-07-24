@@ -7,7 +7,7 @@
     "test": "npx playwright test",
     "test:report": "npx playwright show-report",
     "lint": "eslint . --ext .ts",
-    "format": "prettier --write ."
+    "prettier": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   "devDependencies": {
     "@eslint/js": "^9.31.0",
     "@playwright/test": "^1.54.1",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/node": "^24.1.0",
     "eslint": "^9.31.0",
     "eslint-config-prettier": "^10.1.8",
