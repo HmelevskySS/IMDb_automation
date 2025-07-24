@@ -6,6 +6,11 @@
   "scripts": {
     "test": "npx playwright test",
     "test:report": "npx playwright show-report",
+    "test:chromium": "npx playwright test --project=chromium",
+    "test:firefox": "npx playwright test --project=firefox",
+    "test:webkit": "npx playwright test --project=webkit",
+    "allure:generate": "allure generate ./allure-results --clean",
+    "allure:open": "allure open ./allure-report",
     "lint": "eslint . --ext .ts",
     "prettier": "prettier --write ."
   },
@@ -25,6 +30,8 @@
     "@playwright/test": "^1.54.1",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/node": "^24.1.0",
+    "allure-commandline": "^2.34.1",
+    "allure-playwright": "^3.3.2",
     "eslint": "^9.31.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-playwright": "^2.2.0",
