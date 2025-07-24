@@ -8,7 +8,7 @@ import { expect, test } from '@playwright/test';
 test.describe(
   'Search validation',
   {
-    tag: ['@search'],
+    tag: ['@search', '@movie_page'],
   },
   () => {
     let pageHeader: HeaderComponent;
